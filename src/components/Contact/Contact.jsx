@@ -7,10 +7,10 @@ const Contact = () => {
       <p className="text-lg text-gray-600 text-center ">
         For any questions or suggestions, please email us at{" "}
         <a
-          href="mailto:imamulkadiroyan@gmai.com"
+          href="mailto:imamulkadiroyan@gmail.com"
           className="font-bold hover:text-amber-400"
         >
-          imamulkadiroyan@gmai.com
+          imamulkadiroyan@gmail.com
         </a>
         .
       </p>
