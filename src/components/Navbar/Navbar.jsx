@@ -2,6 +2,9 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  // Use a className for active styling instead of inline style to avoid layout shifts or width changes.
+  // This ensures consistent width regardless of which link is active.
+  const activeClassName = "bg-[#323334] text-white rounded px-2 py-1";
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-4 mb-6 sticky top-0 backdrop-blur-xl bg-white/70 z-50 rounded-lg">
@@ -9,13 +12,28 @@ const Navbar = () => {
 
       {/* Desktop / Medium screens */}
       <nav className="hidden md:flex items-center justify-between gap-8 text-lg font-semibold">
-        <NavLink to="/" className="hover:text-slate-900">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? activeClassName : "hover:text-slate-600"
+          }
+        >
           Home
         </NavLink>
-        <NavLink to="/meals" className="hover:text-slate-900">
+        <NavLink
+          to="/meals"
+          className={({ isActive }) =>
+            isActive ? activeClassName : "hover:text-slate-600"
+          }
+        >
           Meals
         </NavLink>
-        <NavLink to="/contact" className="hover:text-slate-900">
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive ? activeClassName : "hover:text-slate-600"
+          }
+        >
           Contact Us
         </NavLink>
       </nav>
